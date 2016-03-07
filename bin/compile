@@ -62,7 +62,6 @@ mkdir -p $CACHE_DIR
 
 # Restore old artifacts from the cache.
 for dir in $CACHED_DIRS; do
-  puts-step "Copying Cache Dir: " $dir 
   cp -R $CACHE_DIR/$dir . &> /dev/null || true
 done
 
@@ -83,7 +82,7 @@ source $BIN_DIR/steps/conda_compile
 # Store new artifacts in cache.
 for dir in $CACHED_DIRS; do
   rm -rf $CACHE_DIR/$dir
-  cp -R $dir $CACHE_DIR/
+  #cp -R $dir $CACHE_DIR/
 done
 
 # Set context environment variables.
